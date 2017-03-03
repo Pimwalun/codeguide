@@ -88,7 +88,7 @@ When we come back to read the code we can understand that how this class and Met
     } 
 	
 ##Useful references:
-Clean Code by Robert Martin. : http://ricardogeek.com/docs/clean_code.pdf
-Sun's Java Coding Standard and is based on the experience of many programmers.
-Steve Smith : http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself
+Clean Code by Robert Martin. : http://ricardogeek.com/docs/clean_code.pdf <br>
+Sun's Java Coding Standard and is based on the experience of many programmers.<br>
+Steve Smith : http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself<br>
 Prasad Kharkar : http://www.thejavageek.com/2015/04/10/dont-repeat-yourself-principle/
