@@ -1,10 +1,39 @@
-##1Don't Repeat Yourself
+#codeguide
 
-####1.Duplication is waste
+##1.Don't Repeat Yourself
+Don't Repeat Yourself (DRY) is perhaps one of the most fundamental. The principle was formulated by Andy Hunt and Dave Thomas in The Pragmatic Programmer, and underlies many other well-known software development best practices and design patterns. The developer who learns to recognize duplication, and understands how to eliminate it through appropriate practice and proper abstraction, can produce much cleaner code than one who continuously infects the application with unnecessary repetition.
 
-Every line of code that goes into an application must be maintained, and is a potential source of future bugs. Duplication needlessly bloats the codebase, resulting in more opportunities for bugs and adding accidental complexity to the system. The bloat that duplication adds to the system also makes it more difficult for developers working with the system to fully understand the entire system, or to be certain that changes made in one location do not also need to be made in other places that duplicate the logic they are working on. DRY requires that "every piece of knowledge must have a single, unambiguous, authoritative representation within a system."
-
+	Example
+	public class Vehicle {
+ 
+	public void Car() {
+		System.out.println("Start");
+		System.out.println("Ride car now");
+	}
+ 
+	public void Bike() {
+		System.out.println("Start");
+		System.out.println("Ride bike now");
+	}
 	
+	}
+	
+   DRY
+   
+	public class Vehicle {
+    
+	public void Car() {
+		startVehicle();
+		System.out.println("Ride car now");
+	}
+ 
+	public void Bike() {
+		startVehicle();
+		System.out.println("Ride bike now");
+	}
+	public void startVehicle() {
+		System.out.println("Start");
+	}
 
 ##2.Meaningful Names
 ###Use Intention-Revealing Names
@@ -22,12 +51,44 @@ We should choose a name that specifies what is being measured and the unit of th
 	Example
 	String studentName;
 	
+Variable constant should be use all capital letter.
+
+	Example
+	MAX_VALUE,DEFAULD_CURRENCY
+	
+Package name must be lowercase but class names should be start with capital letter.If name is an acronym can use all uppercase name.
+
+	Example
+	Bad package:
+	package Animal
+	Good package:
+	package animal
+	Acronym package:
+	package URL
 ###Class Names
-Avoid words like Manager, Processor, Data, or Info in the name of a class. A class name should not be a verb
+Avoid words like '''Manager''', Processor, Data, or Info in the name of a class. A class name should not be a verb
 ###Method Names
 Methods should have verb or verb phrase names like postPayment, deletePage, or save
 
 	Example
-	student.setName();
-	student.grtName();
+	setName(Type param);
+	grtName();
 
+##3.Write java.doc and Comment
+When we come back to read the code we can understand that how this class and Method work.
+	
+	Example
+	/**
+     * A coin with given value and currency.
+     * @param value is value of coin.
+     * @param currency is currency of coin.
+     */
+    public Coin(double value, String currency) {
+    	super(value, currency);
+    } 
+	
+##Useful references:
+Clean Code by Robert Martin. : http://ricardogeek.com/docs/clean_code.pdf
+Sun's Java Coding Standard and is based on the experience of many programmers.
+Steve Smith : http://programmer.97things.oreilly.com/wiki/index.php/Don't_Repeat_Yourself
+Prasad Kharkar : http://www.thejavageek.com/2015/04/10/dont-repeat-yourself-principle/
